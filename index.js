@@ -1,12 +1,11 @@
-// const request = require('request');
+const EventEmitter = require('event');
 
-// request({
-//   url: 'https://api.douban.com/v2/movie/top250',
-//   json: true
-// }, (error, response, body) => {
-//   console.log(response);
-// })
+class Player extends EventEmitter {}
 
-const greeting = require('./src/greeting')
+var player = new Player();
 
-greeting.hello()
+player.on('play', () => {
+  console.log('正在播放')
+})
+
+player.emmit
